@@ -15,6 +15,7 @@
   border-collapse: collapse; /* Colapsa los bordes de la tabla */
   font-size: 0.9em; /* Tamaño de letra reducido para toda la tabla */
   color: white; /* Color del texto */
+  overflow-x: auto; /* Permite el desplazamiento horizontal en pantallas pequeñas */
 }
 
 .clasificacion-table th {
@@ -25,7 +26,6 @@
   border: 2px solid #585858; /* Borde para encabezados */
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2); /* Sombra para los encabezados */
 }
-
 
 .clasificacion-table td {
   padding: 10px; /* Espaciado interno para celdas */
@@ -47,6 +47,19 @@
 
 .clasificacion-table tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.247); /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para móviles */
+@media (max-width: 600px) {
+  .clasificacion-table {
+    font-size: 0.8em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    width: auto; /* Permitir que la tabla se ajuste al contenido */
+  }
+
+  .clasificacion-table th,
+  .clasificacion-table td {
+    padding: 8px; /* Menos espaciado en celdas */
+  }
 }
 
 button {
@@ -74,11 +87,12 @@ button:active {
 button:focus {
   outline: none; /* Elimina el contorno al enfocarse */
 }
+
 h2 {
   margin-top: 10px; /* Espaciado superior */
   margin-bottom: 10px;
   padding: 10px; /* Espaciado interno */
-  border-radius: 4px; /* Bordes redaxeados */
+  border-radius: 4px; /* Bordes redondeados */
   color: #ffffff; /* Color del texto */
   text-align: center; /* Centra el texto en el contenedor */
 }

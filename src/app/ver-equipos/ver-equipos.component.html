@@ -1,41 +1,38 @@
+<div class="clasificacion-container">
+  <h2>Clasificación de la Liga</h2>
+  <table class="clasificacion-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>P</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>GF</th>
+        <th>GC</th>
+        <th>DG</th>
+        <th>Pt</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let equipo of equipos; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ equipo.nombre }}</td>
+        <td>{{ equipo.partidos }}</td>
+        <td>{{ equipo.ganados }}</td>
+        <td>{{ equipo.empatados }}</td>
+        <td>{{ equipo.perdidos }}</td>
+        <td>{{ equipo.golesFavor }}</td>
+        <td>{{ equipo.golesContra }}</td>
+        <td>{{ equipo.diferenciaGoles }}</td>
+        <td>{{ equipo.puntos }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<div class="clasificacion-container" >
-    <h2>Clasificación de la Liga</h2>
-    <table class="clasificacion-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Nombre</th>
-          <th>P</th>
-          <th>G</th>
-          <th>E</th>
-          <th>P</th>
-          <th>GF</th>
-          <th>GC</th>
-          <th>DG</th>
-          <th>Pt</th>
-        </tr>
-      </thead>
-      
-      <tbody>
-        <tr *ngFor="let equipo of equipos; index as i">
-          <td>{{ i + 1 }}</td>
-          <td>{{ equipo.nombre }}</td>
-          <td>{{ equipo.partidos }}</td>
-          <td>{{ equipo.ganados }}</td>
-          <td>{{ equipo.empatados }}</td>
-          <td>{{ equipo.perdidos }}</td>
-          <td>{{ equipo.golesFavor }}</td>
-          <td>{{ equipo.golesContra }}</td>
-          <td>{{ equipo.diferenciaGoles }}</td>
-          <td>{{ equipo.puntos }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <button (click)="verJugadores()">EQUIPO CANINOS</button>
+</div>
 
-    <button (click)="verJugadores()">EQUIPO CANINOS</button>
-  </div>
-
-  
-
-  <app-ver-partidos></app-ver-partidos>
+<app-ver-partidos></app-ver-partidos>

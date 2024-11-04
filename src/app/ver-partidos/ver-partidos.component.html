@@ -1,14 +1,14 @@
 <div class="partidos-container">
 
   <div *ngFor="let partido of partidosCaninos" class="partido-detalle">
-    <h2>Partidos de los Caninos</h2>
+    <h2>Partidos Caninos</h2>
     <div class="jornadas-container">
       <div class="equipo2" (click)="toggleDetalles(partido)">
-        <span class="equipo-casa">{{ partido.nombreEquipoCasa }}</span>
+        <span class="equipo-casa equipo-small">{{ partido.nombreEquipoCasa }}</span>
         <span class="goles">{{ partido.golesCasa }}</span>
         <span class="goles"> - </span>
         <span class="goles">{{ partido.golesVisitante }}</span>
-        <span class="equipo-visitante">{{ partido.nombreEquipoVisitante }}</span>
+        <span class="equipo-visitante equipo-small">{{ partido.nombreEquipoVisitante }}</span>
       </div>
     </div>
 
@@ -40,13 +40,15 @@
         <div *ngIf="jornada.key === jornadaAbierta">
           <div *ngFor="let partido of jornada.value" class="partido-detalle">
             <div class="equipo">
-              <span class="equipo-casa">{{ partido.nombreEquipoCasa }}</span>
+              <span class="equipo-casa equipo-small">{{ partido.nombreEquipoCasa }}</span>
               <span class="goles">{{ partido.golesCasa }}</span>
               <span class="goles"> - </span>
               <span class="goles">{{ partido.golesVisitante }}</span>
-              <span class="equipo-visitante">{{ partido.nombreEquipoVisitante }}</span>
+              <span class="equipo-visitante equipo-small">{{ partido.nombreEquipoVisitante }}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

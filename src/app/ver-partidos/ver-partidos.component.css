@@ -108,3 +108,7 @@ ul li {
   background-color: #ffffff; /* Color de la línea */
   margin: 20px 0; /* Espacio arriba y abajo de la línea */
 }
+.equipo-small {
+  font-size: 0.6em; /* Ajusta el tamaño según lo necesites */
+  /* Otras propiedades CSS que quieras añadir */
+}

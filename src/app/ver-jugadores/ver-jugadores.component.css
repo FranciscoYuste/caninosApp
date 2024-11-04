@@ -69,22 +69,3 @@ ul {
   z-index: 2; /* Asegura que esté delante del dorsal */
   margin-left: 100px;
 }
-
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 1.5rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
-  }
-
-  ul {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
-  }
-
-  .jugador-item {
-    max-width: 100%; /* Permitir que las tarjetas se ajusten a su contenido */
-  }
-
-  .jugador-foto {
-    width: 50px; /* Tamaño más pequeño para la foto en móviles */
-  }
-}
