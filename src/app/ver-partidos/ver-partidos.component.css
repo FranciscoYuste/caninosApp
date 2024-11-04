@@ -1,0 +1,110 @@
+.partidos-container {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 16px; /* Espaciado interno */
+  text-align: center; /* Centra el texto en el contenedor */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  color: white; /* Color de texto general */
+}
+
+h2 {
+  font-size: 2em; /* Tamaño de fuente para los encabezados */
+  margin: 16px 0; /* Margen para separar los encabezados */
+}
+
+.partido-detalle {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Margen vertical y centra el contenedor horizontalmente */
+  padding: 16px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para las jornadas */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+.partido-detalle:hover {
+  transform: translateY(-5px); /* Eleva el elemento al pasar el ratón */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7); /* Aumenta la sombra al pasar el ratón */
+}
+
+.equipo {
+  font-size: 1.2em; /* Tamaño de fuente para los equipos */
+  display: flex; /* Usar flexbox para alinear los elementos */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.goles {
+  margin: 0 8px; /* Espacio entre los goles y los equipos */
+}
+
+.detalles {
+  text-align: left; /* Alinear texto a la izquierda para los detalles */
+  margin-top: 10px; /* Espacio superior para separar detalles de los equipos */
+}
+
+h4 {
+  font-size: 1.1em; /* Tamaño de fuente para subtítulos */
+  margin: 8px 0; /* Margen para separar subtítulos */
+}
+
+ul {
+  list-style-type: none; /* Eliminar viñetas */
+  padding: 0; /* Eliminar padding */
+}
+
+ul li {
+  margin: 4px 0; /* Margen para separar los elementos de la lista */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para elementos de la lista */
+  padding: 8px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+}
+.jornadas-container{
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Margen vertical y centra el contenedor horizontalmente */
+  padding: 16px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para las jornadas */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+.equipo2 {
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: 5px auto; /* Margen vertical y centra el contenedor horizontalmente */
+  padding: 10px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para las jornadas */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+.jornada-titulo {
+  cursor: pointer; /* Cambia el cursor al pasar el ratón para indicar que es clickeable */
+  padding: 10px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo para el título de la jornada */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.jornada-titulo:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Cambia el fondo al pasar el ratón */
+}
+
+.convocados-container {
+  display: flex; /* Usar flexbox para disposición horizontal */
+  flex-wrap: wrap; /* Permitir que se envuelvan si el espacio es limitado */
+  gap: 8px; /* Espacio entre los nombres de los convocados */
+  margin-top: 8px; /* Espacio superior para separar de la sección anterior */
+}
+
+.convocado {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente para cada convocado */
+  padding: 4px 8px; /* Espaciado interno para mejorar la legibilidad */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+.separador {
+  border: none; /* Eliminar el borde predeterminado */
+  height: 2px; /* Altura de la línea */
+  background-color: #ffffff; /* Color de la línea */
+  margin: 20px 0; /* Espacio arriba y abajo de la línea */
+}

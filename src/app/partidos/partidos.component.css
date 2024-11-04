@@ -1,0 +1,114 @@
+/* Contenedor principal del formulario */
+.titulo {
+  max-width: 400px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Centramos el contenedor */
+  color: #ffd700; /* Texto en blanco */
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: #000000; /* Texto blanco */
+}
+
+/* Estilos para las etiquetas */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff; /* Color de las etiquetas en blanco */
+}
+
+/* Estilos para los inputs */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="checkbox"],
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccce3; /* Borde claro para los inputs */
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #000000; /* Texto blanco en los inputs */
+  opacity: 90%;
+}
+
+/* Estilos específicos para botones */
+button[type="submit"] {
+  padding: 10px; /* Espaciado interno en el botón */
+  background-color: #ffd700; /* Fondo amarillo */
+  color: #000; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave para el fondo */
+  width: 100%; /* El botón ocupa el 100% del ancho */
+}
+
+button[type="button"] {
+  background-color: #ffd700; /* Botón azul */
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  padding: 6px 10px;
+  margin-top: 5px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #ffd700; /* Color más claro al pasar el ratón */
+}
+
+/* Estilos para las secciones de actuaciones y convocatoria */
+div[formArrayName="actuaciones"],
+div[formArrayName="convocatoria"] {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd; /* Borde gris para secciones */
+}
+
+/* Encabezados de secciones */
+h3 {
+  font-size: 18px;
+  color: #fffb00; /* Color de encabezados en amarillo */
+  margin-bottom: 10px;
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid red; /* Borde rojo */
+  background-color: rgba(255, 0, 0, 0.1); /* Fondo rojo claro */
+  color: red; /* Texto en rojo */
+  border-radius: 5px;
+}
+
+/* Estilo para el mensaje de éxito */
+.mensaje {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid green; /* Borde verde */
+  background-color: rgba(0, 128, 0, 0.1); /* Fondo verde claro */
+  color: green; /* Texto en verde */
+  border-radius: 5px;
+}
+
+.no-click {
+  pointer-events: none; /* Desactiva la interacción con el checkbox */
+  cursor: default; /* Cambia el cursor a uno no clickeable */
+}
+
+.separador {
+  border: none; /* Eliminar el borde predeterminado */
+  height: 2px; /* Altura de la línea */
+  background-color: #ffffff; /* Color de la línea */
+  margin: 20px 0; /* Espacio arriba y abajo de la línea */
+}

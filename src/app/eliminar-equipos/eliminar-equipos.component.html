@@ -1,0 +1,17 @@
+<div class="eliminar-equipo">
+  <h1>Eliminar Equipo</h1>
+
+  <label for="equipoSelect">Selecciona un equipo:</label>
+  <select id="equipoSelect" [(ngModel)]="equipoId" (change)="onEquipoSelect()">
+    <option value="" disabled selected>-- Selecciona un equipo --</option>
+    <option *ngFor="let equipo of equipos" [value]="equipo.id">{{ equipo.nombre }}</option>
+  </select>
+
+  <div *ngIf="equipoSeleccionado" class="equipo-info">
+    <h3>Equipo Seleccionado:</h3>
+    <p>ID: {{ equipoSeleccionado.id }}</p>
+    <p>Nombre: {{ equipoSeleccionado.nombre }}</p>
+  </div>
+
+  <button (click)="eliminarEquipo()" [disabled]="!equipoId">Eliminar Equipo</button>
+</div>

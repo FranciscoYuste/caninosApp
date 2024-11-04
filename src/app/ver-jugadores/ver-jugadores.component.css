@@ -1,0 +1,90 @@
+/* Estilos generales del contenedor de jugadores */
+.jugadores-container {
+  max-width: 1200px; /* Máximo ancho para pantallas grandes */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+}
+h3 { 
+  font-size: 1.5rem; /* Tamaño del título */
+  color: yellow
+}
+
+/* Estilo para encabezados de nivel 2 */
+h2 {
+  font-size: 2rem; /* Tamaño del título */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+/* Estilos para la lista de jugadores */
+ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding */
+  display: grid; /* Usa grid para la disposición */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Crea columnas de 300px como mínimo */
+  gap: 10px; /* Espacio entre las tarjetas */
+}
+
+/* Estilo para cada ítem de jugador */
+.jugador-item {
+  background-color: rgba(0, 0, 0, 0.267); /* Fondo negro con opacidad */
+  border: 1px solid; /* Eliminar bordes */
+  border-radius: 8px; /* Bordes redondeados */
+  border-color: rgba(255, 255, 0, 0.055);
+  padding: 15px; /* Espaciado interno */
+  display: flex; /* Usa flexbox para el contenido del jugador */
+  flex-direction: column; /* Cambia a columna para centrar verticalmente */
+  align-items: center; /* Centra horizontalmente los elementos */
+  position: relative; /* Permite posicionar elementos absolutamente */
+  color: white; /* Color del texto */
+  min-width: 100px; /* Ancho mínimo para la tarjeta */
+  max-width: 100%; /* Permitir que las tarjetas se ajusten a su contenido */
+  height: auto; /* Ajuste automático de la altura */
+}
+
+/* Estilo para el fondo del dorsal */
+.dorsal-background {
+  position: absolute; /* Posiciona el número del dorsal en el fondo */
+  font-size: 5rem; /* Tamaño más grande para el número del dorsal */
+  font-weight: bold; /* Hace que el texto sea más grueso */
+  color: rgba(255, 255, 0, 0.918); /* Color amarillo con opacidad */
+  top: 5%; /* Ajusta la posición vertical */
+  left: 5%; /* Ajusta la posición horizontal */
+  z-index: 1; /* Asegura que esté detrás del contenido */
+}
+
+/* Estilo para la foto del jugador */
+.jugador-foto {
+  width: 80px; /* Ancho de la foto */
+  height: auto; /* Mantiene la relación de aspecto */
+  border-radius: 20%; /* Hace que la imagen sea circular */
+  margin-bottom: 10px; /* Espacio debajo de la foto */
+  margin-left: 100px;
+  z-index: 2; /* Asegura que esté delante del dorsal */
+}
+
+/* Estilo para la información del jugador */
+.jugador-info {
+  text-align: center; /* Alinea el texto al centro */
+  z-index: 2; /* Asegura que esté delante del dorsal */
+  margin-left: 100px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
+
+  ul {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+  }
+
+  .jugador-item {
+    max-width: 100%; /* Permitir que las tarjetas se ajusten a su contenido */
+  }
+
+  .jugador-foto {
+    width: 50px; /* Tamaño más pequeño para la foto en móviles */
+  }
+}

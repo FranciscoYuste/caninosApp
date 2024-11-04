@@ -1,0 +1,90 @@
+/* Contenedor principal para modificar jugadores */
+.modificar-jugadores-container {
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centramos el contenedor */
+    padding: 20px; /* Espaciado interno */
+    font-family: Arial, sans-serif; /* Tipografía */
+    color: #ffffff; /* Texto en blanco */
+}
+
+h2 {
+    text-align: center; /* Centramos el título */
+    color: #fffb00; /* Color del texto en amarillo */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Mayor espacio entre los campos del formulario */
+}
+
+/* Estilos para las etiquetas */
+label {
+    display: block; /* Asegura que la etiqueta ocupe el espacio completo */
+    margin-bottom: 5px; /* Espacio inferior */
+    font-weight: bold; /* Negrita para las etiquetas */
+    color: #ffffff; /* Color del texto de las etiquetas */
+}
+
+/* Estilos para inputs y selects */
+select,
+input[type="number"],
+input[type="text"],
+input[type="url"] {
+    width: 100%; /* El input ocupa el 100% del ancho */
+    padding: 10px; /* Espaciado interno en los campos de entrada */
+    margin-bottom: 15px; /* Espacio inferior entre campos */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+    color: #000; /* Texto en negro para mayor legibilidad */
+    background-color: #f4f4f9; /* Fondo claro para los inputs */
+}
+
+select:focus,
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus {
+    border-color: #fffb00; /* Color del borde al enfocar (amarillo) */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilos para botones */
+button {
+    width: 100%; /* El botón ocupa el 100% del ancho */
+    padding: 10px; /* Espaciado interno en el botón */
+    background-color: #ffd700; /* Fondo amarillo */
+    color: #000; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+button:hover {
+    background-color: #e0e0e0; /* Color de fondo al pasar el mouse (gris claro) */
+}
+
+/* Estilo para el mensaje */
+.alert {
+    padding: 15px; /* Espaciado interno */
+    margin: 15px 0; /* Margen superior e inferior */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+    background-color: #28a745; /* Color de fondo para el mensaje de éxito */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+}
+
+/* Para ocultar el mensaje (opcional, si decides usar una clase para ocultarlo) */
+.alert.hidden {
+    opacity: 0; /* Ocultar el mensaje */
+    pointer-events: none; /* Evitar que se interactúe con él */
+}
+
+/* Estilo adicional para un mensaje de error */
+.alert-error {
+    background-color: #dc3545; /* Color de fondo para el mensaje de error */
+}

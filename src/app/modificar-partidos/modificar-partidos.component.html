@@ -1,0 +1,78 @@
+<form [formGroup]="formularioPartido" (ngSubmit)="modificarPartido()">
+    <div class="form-group">
+      <label for="partidoSelect">Seleccionar Partido:</label>
+      <select id="partidoSelect" (change)="onPartidoSelect($event)" formControlName="partido">
+        <option value="" disabled selected>Selecciona un partido</option>
+        <option *ngFor="let partido of partidos" [value]="partido.id">
+          {{ partido.jornada }} - {{ partido.equipoCasa }} vs {{ partido.equipoVisitante }}
+        </option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label>Jornada:</label>
+      <input formControlName="jornada" required />
+    </div>
+    <div class="form-group">
+      <label>Fecha:</label>
+      <input type="date" formControlName="fecha" required />
+    </div>
+    <div class="form-group">
+      <label>Equipo Casa:</label>
+      <input formControlName="equipoCasa" required />
+    </div>
+    <div class="form-group">
+      <label>Goles Casa:</label>
+      <input type="number" formControlName="golesCasa" required />
+    </div>
+    <div class="form-group">
+      <label>Equipo Visitante:</label>
+      <input formControlName="equipoVisitante" required />
+    </div>
+    <div class="form-group">
+      <label>Goles Visitante:</label>
+      <input type="number" formControlName="golesVisitante" required />
+    </div>
+  
+    <div *ngIf="formularioPartido.get('esCanino')?.value">
+      <h3>Actuaciones de Jugadores</h3>
+      <div formArrayName="actuaciones">
+        <div *ngFor="let actuacion of actuaciones.controls; let i = index" [formGroupName]="i">
+          <label>Nombre:</label>
+          <select formControlName="nombre">
+            <option *ngFor="let jugador of jugadores" [value]="jugador">{{ jugador }}</option>
+          </select>
+  
+          <label>Goles:</label>
+          <input type="number" formControlName="goles" required />
+  
+          <label>Asistencias:</label>
+          <input type="number" formControlName="asistencias" required />
+  
+          <button type="button" (click)="removeActuacion(i)">Eliminar Actuación</button>
+        </div>
+      </div>
+      <button type="button" (click)="addActuacion()">Agregar Actuación</button>
+    </div>
+  
+    <div *ngIf="formularioPartido.get('esCanino')?.value">
+      <h3>Convocatoria de Jugadores</h3>
+      <div formArrayName="convocatoria">
+        <div *ngFor="let convocado of convocatoria.controls; let i = index" [formGroupName]="i">
+          <label>Nombre:</label>
+          <select formControlName="nombre">
+            <option *ngFor="let jugador of jugadores" [value]="jugador">{{ jugador }}</option>
+          </select>
+  
+          <button type="button" (click)="removeConvocado(i)">Eliminar Convocado</button>
+        </div>
+      </div>
+      <button type="button" (click)="addConvocado()">Agregar Convocado</button>
+    </div>
+  
+    <button type="submit">Modificar Partido</button>
+  </form>
+
+  <div *ngIf="mensajeVisible" class="alert alert-success">
+    {{ mensaje }}
+  </div>

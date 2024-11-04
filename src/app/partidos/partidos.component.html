@@ -1,0 +1,68 @@
+<form [formGroup]="partidoForm" (ngSubmit)="crearPartido()">
+
+  <label class = 'titulo'>AÑADIR PARTIDO</label>
+
+  <label>Jornada</label>
+  <input formControlName="jornada" type="number" />
+
+  <label>Fecha</label>
+  <input formControlName="fecha" type="date" />
+
+  <label for="equipoCasa">Equipo Casa</label>
+  <select id="equipoCasa" formControlName="equipoCasa" (change)="onEquipoSelected()">
+    <option *ngFor="let equipo of equipos" [value]="equipo.nombre">{{ equipo.nombre }}</option>
+  </select>
+
+  <label>Goles Casa</label>
+  <input formControlName="golesCasa" type="number" />
+
+  <label for="equipoVisitante">Equipo Visitante</label>
+  <select id="equipoVisitante" formControlName="equipoVisitante" (change)="onEquipoSelected()">
+    <option *ngFor="let equipo of equipos" [value]="equipo.nombre">{{ equipo.nombre }}</option>
+  </select>
+
+  <label>Goles Visitante</label>
+  <input formControlName="golesVisitante" type="number"/>
+
+  <label>¿Es un partido canino?</label>
+  <input type="checkbox" formControlName="esCanino" class="no-click"/>
+
+  <div *ngIf="partidoForm.get('esCanino')?.value">
+    <h3>Actuaciones de Jugadores</h3>
+    <div formArrayName="actuaciones">
+      <div *ngFor="let actuacion of actuaciones.controls; let i = index" [formGroupName]="i">
+        <label>Jugador {{ i + 1 }}</label>
+        <select formControlName="nombre">
+          <option *ngFor="let jugador of jugadores" [value]="jugador.nombre">{{ jugador.nombre }}</option>
+        </select>
+
+        <label>Goles</label>
+        <input formControlName="goles" type="number" />
+
+        <label>Asistencias</label>
+        <input formControlName="asistencias" type="number" />
+      </div>
+    </div>
+    <button type="button" (click)="addActuacion()">Agregar Actuación</button>
+
+    <h3>Convocatoria de Jugadores</h3>
+    <div formArrayName="convocatoria">
+      <div *ngFor="let convocado of convocatoria.controls; let i = index" [formGroupName]="i">
+        <label>Convocado {{ i + 1 }}</label>
+        <select formControlName="nombre">
+          <option *ngFor="let jugador of jugadores" [value]="jugador.nombre">{{ jugador.nombre }}</option>
+        </select>
+      </div>
+    </div>
+    <button type="button" (click)="addConvocado()">Agregar Convocado</button>
+  </div>
+
+  <hr class="separador"> <!-- Línea horizontal personalizada -->
+  <hr class="separador"> <!-- Línea horizontal personalizada -->
+
+  <button type="submit">Crear Partido</button>
+
+  <div *ngIf="mensajeVisible">
+    {{ mensaje }}
+  </div>
+</form>

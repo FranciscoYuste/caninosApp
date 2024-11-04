@@ -1,0 +1,74 @@
+/* Contenedor principal para eliminar jugadores */
+.eliminar-jugador {
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centramos el contenedor */
+    padding: 20px; /* Espaciado interno */
+    font-family: Arial, sans-serif; /* Tipografía */
+}
+
+/* Título */
+.eliminar-jugador h1 {
+    text-align: center; /* Centramos el título */
+    font-size: 24px; /* Tamaño del título */
+    color: #fffb00; /* Color del texto en amarillo */
+}
+
+/* Estilos para las etiquetas */
+.eliminar-jugador label {
+    font-weight: bold; /* Negrita para las etiquetas */
+    margin-bottom: 5px; /* Espacio inferior */
+    color: #ffffff; /* Color del texto en blanco */
+    display: block; /* Asegura que la etiqueta ocupe el espacio completo */
+}
+
+/* Estilos para selects */
+.eliminar-jugador select {
+    padding: 10px; /* Espaciado interno en el campo de selección */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    width: 100%; /* El select ocupa el 100% del ancho */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Estilo al enfocar el select */
+.eliminar-jugador select:focus {
+    border-color: #fffb00; /* Color del borde al enfocar (amarillo) */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilo para información del jugador */
+.eliminar-jugador .jugador-info {
+    margin-top: 20px; /* Espacio superior */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #007BFF; /* Borde azul */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #e7f3ff; /* Fondo azul claro */
+    color: #0056b3; /* Color del texto */
+}
+
+/* Estilos para botones */
+.eliminar-jugador button {
+    padding: 10px; /* Espaciado interno en el botón */
+    background-color: #dc3545; /* Fondo rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    width: 100%; /* El botón ocupa el 100% del ancho */
+    margin-top: 15px; /* Espacio superior */
+}
+
+/* Estilo al pasar el mouse sobre el botón */
+.eliminar-jugador button:hover {
+    background-color: #c82333; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para el botón deshabilitado */
+.eliminar-jugador button:disabled {
+    background-color: #ccc; /* Color de fondo para el botón deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor para indicar que está deshabilitado */
+}

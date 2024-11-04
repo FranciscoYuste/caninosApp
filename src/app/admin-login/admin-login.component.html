@@ -1,0 +1,23 @@
+<div class="admin-login-container">
+    <h2>Acceso Admin</h2>
+    
+    <form (ngSubmit)="login()">
+      <div>
+        <label for="adminContrasena">Contraseña:</label>
+        <input
+          type="password"
+          id="adminContrasena"
+          [(ngModel)]="adminContrasena"
+          name="adminContrasena"
+          required
+          placeholder="Ingresa la contraseña"
+        />
+      </div>
+      
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+      
+      <button type="submit">Entrar</button>
+    </form>
+  </div>

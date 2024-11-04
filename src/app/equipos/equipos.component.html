@@ -1,0 +1,47 @@
+<div class="crear-equipo-container">
+  <h2>Crear Nuevo Equipo</h2>
+  <form [formGroup]="formularioEquipos" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="partidos">Partidos:</label>
+      <input id="partidos" formControlName="partidos" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="ganados">Ganados:</label>
+      <input id="ganados" formControlName="ganados" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="empatados">Empatados:</label>
+      <input id="empatados" formControlName="empatados" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="perdidos">Perdidos:</label>
+      <input id="perdidos" formControlName="perdidos" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="golesFavor">Goles a Favor:</label>
+      <input id="golesFavor" formControlName="golesFavor" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="golesContra">Goles en Contra:</label>
+      <input id="golesContra" formControlName="golesContra" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="diferenciaGoles">Diferencia de Goles:</label>
+      <input id="diferenciaGoles" formControlName="diferenciaGoles" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="puntos">Puntos:</label>
+      <input id="puntos" formControlName="puntos" type="number" />
+    </div>
+    <button type="submit">Crear Equipo</button>
+  </form>
+
+  <!-- Mensaje de estado -->
+  <div *ngIf="mensajeVisible" class="mensaje">
+    {{ mensaje }}
+  </div>
+</div>

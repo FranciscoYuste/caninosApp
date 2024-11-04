@@ -1,0 +1,72 @@
+/* Contenedor principal para eliminar partidos */
+.eliminar-partido {
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centramos el contenedor */
+    padding: 20px; /* Espaciado interno */
+    font-family: Arial, sans-serif; /* Tipografía */
+}
+
+/* Título */
+.eliminar-partido h1 {
+    text-align: center; /* Centramos el título */
+    font-size: 24px; /* Tamaño del título */
+    color: #fffb00; /* Color del texto en amarillo */
+}
+
+/* Estilos para las etiquetas */
+.eliminar-partido label {
+    display: block; /* Mostrar como bloque para ocupar todo el ancho */
+    margin-bottom: 8px; /* Espaciado inferior */
+    font-weight: bold; /* Negrita */
+    color: #ffffff; /* Color del texto en blanco */
+}
+
+/* Estilos para selects */
+.eliminar-partido select {
+    width: 100%; /* Ancho completo */
+    padding: 8px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del select */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Estilo al enfocar el select */
+.eliminar-partido select:focus {
+    border-color: #fffb00; /* Color del borde al enfocar (amarillo) */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilo para información del partido */
+.eliminar-partido .partido-info {
+    margin: 15px 0; /* Espaciado superior e inferior */
+    padding: 10px; /* Espaciado interno */
+    border: 1px dashed #ccc; /* Borde punteado */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #f0f0f0; /* Color de fondo */
+}
+
+/* Estilos para botones */
+.eliminar-partido button {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #d9534f; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Estilo al pasar el mouse sobre el botón */
+.eliminar-partido button:hover {
+    background-color: #c9302c; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo para el botón deshabilitado */
+.eliminar-partido button:disabled {
+    background-color: #ccc; /* Color de fondo del botón deshabilitado */
+    cursor: not-allowed; /* Cursor al pasar sobre un botón deshabilitado */
+}

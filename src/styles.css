@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Montserrat", sans-serif; /* Cambia "Montserrat" por la fuente que elijas */
+    font-weight: 400; /* Peso normal */
+    background-image: url('/fondonegro2.jpg');
+    
+}
+
+h1, h2, h3 {
+    font-weight: 600; /* Peso más pesado para encabezados */
+}

@@ -1,0 +1,34 @@
+<div class="modificar-jugadores-container">
+    <h2>Modificar Jugador</h2>
+    
+    <label for="jugadorSelect">Selecciona un jugador:</label>
+    
+    <select id="jugadorSelect" (change)="onJugadorSelect($event)">
+      <option value="" disabled selected>Selecciona un jugador</option>
+      <option *ngFor="let jugador of jugadores" [value]="jugador.id">{{ jugador.nombre }}</option>
+    </select>
+  
+    <form [formGroup]="formularioJugador" (ngSubmit)="modificarJugador()">
+  
+      <div class="form-group">
+        <label for="dorsal">Dorsal:</label>
+        <input id="dorsal" type="number" formControlName="dorsal" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="goles">Goles:</label>
+        <input id="goles" type="number" formControlName="goles" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="asistencias">Asistencias:</label>
+        <input id="asistencias" type="number" formControlName="asistencias" required />
+      </div>
+  
+      <button type="submit">Modificar Jugador</button>
+    </form>
+</div>
+
+<div *ngIf="mensajeVisible" class="alert alert-success">
+  {{ mensaje }}
+</div>

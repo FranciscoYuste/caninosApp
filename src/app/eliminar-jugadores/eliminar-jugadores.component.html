@@ -1,0 +1,17 @@
+<div class="eliminar-jugador">
+  <h1>Eliminar Jugador</h1>
+
+  <label for="jugadorSelect">Selecciona un jugador:</label>
+  <select id="jugadorSelect" [(ngModel)]="jugadorId" (change)="onJugadorSelect()">
+    <option value="" disabled selected>Selecciona un jugador</option>
+    <option *ngFor="let jugador of jugadores" [value]="jugador.id">{{ jugador.nombre }}</option>
+  </select>
+
+  <div *ngIf="jugadorSeleccionado" class="jugador-info">
+    <h3>Jugador Seleccionado:</h3>
+    <p>ID: {{ jugadorSeleccionado.id }}</p>
+    <p>Nombre: {{ jugadorSeleccionado.nombre }}</p>
+  </div>
+
+  <button (click)="eliminarJugador()" [disabled]="!jugadorId">Eliminar Jugador</button>
+</div>

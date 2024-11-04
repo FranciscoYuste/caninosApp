@@ -1,0 +1,58 @@
+<div class="modificar-equipos-container">
+    <h2>Modificar Equipo</h2>
+    
+    <label for="equipoSelect">Selecciona un equipo:</label>
+    <select id="equipoSelect" (change)="onEquipoSelect($event)">
+      <option value="" disabled selected>Selecciona un equipo</option>
+      <option *ngFor="let equipo of equipos" [value]="equipo.id">{{ equipo.nombre }}</option>
+    </select>
+  
+    <form [formGroup]="formularioEquipo" (ngSubmit)="modificarEquipo()">
+  
+      <div class="form-group">
+        <label for="partidos">Partidos:</label>
+        <input id="partidos" type="number" formControlName="partidos" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="ganados">Ganados:</label>
+        <input id="ganados" type="number" formControlName="ganados" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="empatados">Empatados:</label>
+        <input id="empatados" type="number" formControlName="empatados" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="perdidos">Perdidos:</label>
+        <input id="perdidos" type="number" formControlName="perdidos" required />
+      </div>
+
+      <div class="form-group">
+        <label for="golesAFavor">Goles a Favor:</label>
+        <input id="golesAFavor" type="number" formControlName="golesFavor" required />
+      </div>
+
+      <div class="form-group">
+        <label for="golesEnContra">Goles en Contra:</label>
+        <input id="golesEnContra" type="number" formControlName="golesContra" required />
+      </div>
+
+      <div class="form-group">
+        <label for="diferenciaGoles">Diferencia de Goles:</label>
+        <input id="diferenciaGoles" type="number" formControlName="diferenciaGoles" required />
+      </div>
+
+      <div class="form-group">
+        <label for="puntos">Puntos:</label>
+        <input id="puntos" type="number" formControlName="puntos" required />
+      </div>
+  
+      <button type="submit">Modificar Equipo</button>
+    </form>
+</div>
+
+<div *ngIf="mensajeVisible" class="alert alert-success">
+  {{ mensaje }}
+</div>

@@ -1,0 +1,52 @@
+<div class="partidos-container">
+
+  <div *ngFor="let partido of partidosCaninos" class="partido-detalle">
+    <h2>Partidos de los Caninos</h2>
+    <div class="jornadas-container">
+      <div class="equipo2" (click)="toggleDetalles(partido)">
+        <span class="equipo-casa">{{ partido.nombreEquipoCasa }}</span>
+        <span class="goles">{{ partido.golesCasa }}</span>
+        <span class="goles"> - </span>
+        <span class="goles">{{ partido.golesVisitante }}</span>
+        <span class="equipo-visitante">{{ partido.nombreEquipoVisitante }}</span>
+      </div>
+    </div>
+
+    <!-- Mostrar detalles solo si mostrarDetalles es true -->
+    <div class="detalles" *ngIf="partido.mostrarDetalles">
+      <h4>Actuaciones de Jugadores:</h4>
+      <ul>
+        <li *ngFor="let actuacion of partido.actuaciones">
+          {{ actuacion.nombre }} - Goles: {{ actuacion.goles }}, Asistencias: {{ actuacion.asistencias }}
+        </li>
+      </ul>
+      <h4>Convocados:</h4>
+      <div class="convocados-container">
+        <span *ngFor="let convocado of partido.convocatoria; let i = index; let last = last" class="convocado">
+          {{ convocado.nombre }}<span *ngIf="!last">, </span> <!-- Añade una coma entre los nombres -->
+        </span>
+      </div>
+    </div>
+
+    <hr class="separador"> <!-- Línea horizontal personalizada -->
+
+    <h2>Todos los Partidos</h2>
+    <div class="jornadas-container">
+      <div class="jornada" *ngFor="let jornada of (partidosPorJornada | keyvalue)">
+        <div class="jornada-titulo" (click)="toggleJornada(jornada.key)">
+          <strong>Jornada:</strong> {{ jornada.key }}
+        </div>
+
+        <div *ngIf="jornada.key === jornadaAbierta">
+          <div *ngFor="let partido of jornada.value" class="partido-detalle">
+            <div class="equipo">
+              <span class="equipo-casa">{{ partido.nombreEquipoCasa }}</span>
+              <span class="goles">{{ partido.golesCasa }}</span>
+              <span class="goles"> - </span>
+              <span class="goles">{{ partido.golesVisitante }}</span>
+              <span class="equipo-visitante">{{ partido.nombreEquipoVisitante }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,19 @@
+<div class="eliminar-partido">
+    <h1>Eliminar Partido</h1>
+
+    <label for="partidoSelect">Selecciona un partido:</label>
+    <select id="partidoSelect" [(ngModel)]="partidoId" (change)="onPartidoSelect()">
+      <option value="" disabled selected>-- Selecciona un partido --</option>
+      <option *ngFor="let partido of partidos" [value]="partido.id">Jornada {{ partido.jornada }} - {{ partido.nombreEquipoCasa }} vs {{ partido.nombreEquipoVisitante }}</option>
+    </select>
+
+    <div *ngIf="partidoSeleccionado" class="partido-info">
+      <h3>Partido Seleccionado:</h3>
+      <p>ID: {{ partidoSeleccionado.id }}</p>
+      <p>Jornada: {{ partidoSeleccionado.jornada }}</p>
+      <p>Fecha: {{ partidoSeleccionado.fecha }}</p>
+      <p>{{ partidoSeleccionado.equipoCasa }} vs {{ partidoSeleccionado.equipoVisitante }}</p>
+    </div>
+
+    <button (click)="eliminarPartido()" [disabled]="!partidoId">Eliminar Partido</button>
+</div>

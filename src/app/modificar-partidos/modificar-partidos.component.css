@@ -1,0 +1,91 @@
+/* Estilos generales del formulario */
+form {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centramos el formulario */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo claro */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilos para cada grupo de campos */
+  .form-group {
+    margin-bottom: 15px; /* Espaciado entre los grupos */
+  }
+  
+  /* Estilos para las etiquetas */
+  label {
+    display: block; /* Hacemos que las etiquetas ocupen todo el ancho */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+  }
+  
+  /* Estilos para los inputs y selects */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluimos el padding en el ancho total */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  /* Estilos para los botones */
+  button {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
+  }
+  
+  /* Estilos para encabezados */
+  h3 {
+    margin-top: 20px; /* Espacio encima del encabezado */
+    color: #333; /* Color del texto */
+  }
+  
+  /* Espaciado entre los botones de eliminación */
+  button[type="button"] {
+    margin-top: 5px; /* Espacio superior para botones de eliminar */
+  }
+  
+  /* Estilo para los campos obligatorios */
+  input:invalid {
+    border-color: red; /* Borde rojo para campos inválidos */
+  }
+  
+  input:valid {
+    border-color: green; /* Borde verde para campos válidos */
+  }
+  .alert {
+    padding: 15px; /* Espaciado interno */
+    margin: 15px 0; /* Margen superior e inferior */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+    background-color: #28a745; /* Color de fondo para el mensaje de éxito */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+}
+
+/* Para ocultar el mensaje (opcional, si decides usar una clase para ocultarlo) */
+.alert.hidden {
+    opacity: 0; /* Ocultar el mensaje */
+    pointer-events: none; /* Evitar que se interactúe con él */
+}
+
+/* Estilo adicional para un mensaje de error, si decides incluir uno */
+.alert-error {
+    background-color: #dc3545; /* Color de fondo para el mensaje de error */
+}

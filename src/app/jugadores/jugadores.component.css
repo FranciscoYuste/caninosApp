@@ -1,0 +1,71 @@
+/* Contenedor principal para jugadores */
+.jugadores-container {
+  max-width: 400px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Centramos el contenedor */
+  padding: 20px; /* Espaciado interno */
+  color: #ffffff; /* Texto en blanco */
+}
+
+h2 {
+  text-align: center; /* Centramos el título */
+  color: #fffb00; /* Color del texto en amarillo */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Espacio entre los campos del formulario */
+}
+
+/* Estilos para las etiquetas */
+label {
+  font-weight: bold; /* Negrita para las etiquetas */
+  margin-bottom: 5px; /* Espacio inferior */
+  color: #ffffff; /* Color de las etiquetas en blanco */
+  display: block; /* Asegura que la etiqueta ocupe el espacio completo */
+}
+
+/* Estilos para inputs */
+input {
+  padding: 10px; /* Espaciado interno en los campos de entrada */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  width: 100%; /* El input ocupa el 100% del ancho */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+  color: #000; /* Texto en negro para mayor legibilidad */
+  background-color: #f4f4f9; /* Fondo claro para los inputs */
+}
+
+input:focus {
+  border-color: #fffb00; /* Color del borde al enfocar (amarillo) */
+  outline: none; /* Sin contorno */
+}
+
+/* Estilos para botones */
+button {
+  padding: 10px; /* Espaciado interno en el botón */
+  background-color: #ffd700; /* Fondo amarillo */
+  color: #000; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave para el fondo */
+  width: 100%; /* El botón ocupa el 100% del ancho */
+}
+
+button:hover {
+  background-color: #e0e0e0; /* Color de fondo al pasar el mouse (gris claro) */
+}
+
+/* Estilo para el mensaje */
+.mensaje {
+  margin-top: 20px; /* Espacio superior */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #007BFF; /* Borde azul */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: rgba(0, 128, 0, 0.1); /* Fondo verde claro */
+  color: green; /* Color del texto */
+  text-align: center; /* Centramos el texto del mensaje */
+}

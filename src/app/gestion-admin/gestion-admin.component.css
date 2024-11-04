@@ -1,0 +1,37 @@
+.gestion-admin {
+    max-width: 600px; /* Limita el ancho del componente */
+    margin: 20px auto; /* Centra el componente en la página */
+    padding: 20px; /* Espacio interior */
+    text-align: center; /* Centra el texto */
+    color: #ffffff; /* Color de texto blanco */
+}
+
+.button-container {
+    display: flex; /* Usa flexbox para el diseño de los botones */
+    flex-direction: column; /* Coloca los botones en columna */
+    gap: 15px; /* Espacio entre botones */
+}
+
+.admin-button {
+    padding: 15px 25px; /* Espaciado interior del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    color: rgb(0, 0, 0); /* Color del texto en negro */
+    background-color: #fffb00f1; /* Color de fondo amarillo */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil en el botón */
+}
+
+.admin-button:hover {
+    background-color: #ffd700; /* Color más oscuro al pasar el ratón */
+}
+
+
+.separador {
+    border: none; /* Eliminar el borde predeterminado */
+    height: 2px; /* Altura de la línea */
+    background-color: #ffee00; /* Color de la línea */
+    margin: 20px 0; /* Espacio arriba y abajo de la línea */
+  }

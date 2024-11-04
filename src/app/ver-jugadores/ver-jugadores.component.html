@@ -1,0 +1,19 @@
+<div class="jugadores-container">
+  <h2>Lista de Jugadores</h2>
+
+  <div *ngIf="jugadores.length === 0"> <!-- Muestra mensaje si no hay jugadores -->
+    <p>No hay jugadores disponibles.</p>
+  </div>
+
+  <ul *ngIf="jugadores.length > 0"> <!-- Lista de jugadores -->
+    <li *ngFor="let jugador of jugadores" class="jugador-item">
+      <div class="dorsal-background">{{ jugador.dorsal }}</div> <!-- Número del dorsal -->
+      <img [src]="jugador.foto" alt="{{jugador.nombre}}" class="jugador-foto" />
+      <div class="jugador-info">
+        <h3>{{ jugador.nombre }}</h3>
+        <p>Goles: {{ jugador.goles }}</p>
+        <p>Asistencias: {{ jugador.asistencias }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

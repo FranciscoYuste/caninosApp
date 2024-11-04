@@ -1,0 +1,84 @@
+.clasificacion-container {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 16px; /* Espaciado interno */
+  text-align: center; /* Centra el texto en el contenedor */
+  display: flex; /* Activa flexbox */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+}
+
+.clasificacion-table {
+  width: 100%; /* La tabla ocupa el 100% del ancho del contenedor */
+  border-collapse: collapse; /* Colapsa los bordes de la tabla */
+  font-size: 0.9em; /* Tamaño de letra reducido para toda la tabla */
+  color: white; /* Color del texto */
+}
+
+.clasificacion-table th {
+  background-color: rgba(255, 255, 255, 0.185); /* Fondo blanco para los encabezados */
+  color: rgb(153, 153, 153); /* Texto negro para los encabezados */
+  font-weight: bold; /* Negrita para encabezados */
+  padding: 10px; /* Espaciado interno */
+  border: 2px solid #585858; /* Borde para encabezados */
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2); /* Sombra para los encabezados */
+}
+
+
+.clasificacion-table td {
+  padding: 10px; /* Espaciado interno para celdas */
+  border: 1px solid #585858; /* Borde para celdas */
+  font-size: 0.9em; /* Tamaño de letra normal para celdas */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.24); /* Sombra exterior */
+  transition: transform 0.2s ease; /* Transición para el efecto de escala */
+}
+
+.clasificacion-table tbody tr:hover td,
+.clasificacion-table tbody tr:hover th {
+  transform: translateY(-2px); /* Efecto de levantamiento al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.377); /* Aumentar la sombra al pasar el mouse */
+}
+
+.clasificacion-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.055); /* Fondo blanco semitransparente para filas pares */
+}
+
+.clasificacion-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.247); /* Color de fondo al pasar el mouse */
+}
+
+button {
+  background-color: #FFD700; /* Color de fondo amarillo */
+  color: black; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno (vertical y horizontal) */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a un puntero */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave para el cambio de color y escala */
+  margin-top: 16px; /* Espaciado superior para el botón */
+}
+
+button:hover {
+  background-color: #FFC107; /* Color de fondo más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+}
+
+button:active {
+  background-color: #FFA000; /* Color de fondo aún más oscuro al hacer clic */
+  transform: scale(0.95); /* Efecto de escala al hacer clic */
+}
+
+button:focus {
+  outline: none; /* Elimina el contorno al enfocarse */
+}
+h2 {
+  margin-top: 10px; /* Espaciado superior */
+  margin-bottom: 10px;
+  padding: 10px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redaxeados */
+  color: #ffffff; /* Color del texto */
+  text-align: center; /* Centra el texto en el contenedor */
+}
