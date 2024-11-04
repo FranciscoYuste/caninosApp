@@ -1,7 +1,7 @@
 <div class="partidos-container">
 
+  <h2>Partidos Caninos</h2>
   <div *ngFor="let partido of partidosCaninos" class="partido-detalle">
-    <h2>Partidos Caninos</h2>
     <div class="jornadas-container">
       <div class="equipo2" (click)="toggleDetalles(partido)">
         <span class="equipo-casa equipo-small">{{ partido.nombreEquipoCasa }}</span>
@@ -22,30 +22,30 @@
       </ul>
       <h4>Convocados:</h4>
       <div class="convocados-container">
-        <span *ngFor="let convocado of partido.convocatoria; let i = index; let last = last" class="convocado">
+        <span *ngFor="let convocado of partido.convocatoria; let last = last" class="convocado">
           {{ convocado.nombre }}<span *ngIf="!last">, </span> <!-- Añade una coma entre los nombres -->
         </span>
       </div>
     </div>
+  </div>
 
-    <hr class="separador"> <!-- Línea horizontal personalizada -->
+  <hr class="separador"> <!-- Línea horizontal personalizada -->
 
-    <h2>Todos los Partidos</h2>
-    <div class="jornadas-container">
-      <div class="jornada" *ngFor="let jornada of (partidosPorJornada | keyvalue)">
-        <div class="jornada-titulo" (click)="toggleJornada(jornada.key)">
-          <strong>Jornada:</strong> {{ jornada.key }}
-        </div>
+  <h2>Todos los Partidos</h2>
+  <div class="jornadas-container">
+    <div class="jornada" *ngFor="let jornada of (partidosPorJornada | keyvalue)">
+      <div class="jornada-titulo" (click)="toggleJornada(jornada.key)">
+        <strong>Jornada:</strong> {{ jornada.key }}
+      </div>
 
-        <div *ngIf="jornada.key === jornadaAbierta">
-          <div *ngFor="let partido of jornada.value" class="partido-detalle">
-            <div class="equipo">
-              <span class="equipo-casa equipo-small">{{ partido.nombreEquipoCasa }}</span>
-              <span class="goles">{{ partido.golesCasa }}</span>
-              <span class="goles"> - </span>
-              <span class="goles">{{ partido.golesVisitante }}</span>
-              <span class="equipo-visitante equipo-small">{{ partido.nombreEquipoVisitante }}</span>
-            </div>
+      <div *ngIf="jornada.key === jornadaAbierta">
+        <div *ngFor="let partido of jornada.value" class="partido-detalle">
+          <div class="equipo">
+            <span class="equipo-casa equipo-small">{{ partido.nombreEquipoCasa }}</span>
+            <span class="goles">{{ partido.golesCasa }}</span>
+            <span class="goles"> - </span>
+            <span class="goles">{{ partido.golesVisitante }}</span>
+            <span class="equipo-visitante equipo-small">{{ partido.nombreEquipoVisitante }}</span>
           </div>
         </div>
       </div>
