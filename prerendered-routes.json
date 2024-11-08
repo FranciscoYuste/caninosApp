@@ -1,0 +1,18 @@
+{
+  "routes": [
+    "/",
+    "/admin",
+    "/añadirEquipos",
+    "/añadirJugadores",
+    "/añadirPartidos",
+    "/borrarEquipos",
+    "/borrarJugadores",
+    "/borrarPartidos",
+    "/equipos",
+    "/jugadores",
+    "/modificarEquipos",
+    "/modificarJugadores",
+    "/modificarPartidos",
+    "/validarLoginAdmin"
+  ]
+}
