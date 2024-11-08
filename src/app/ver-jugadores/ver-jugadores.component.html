@@ -1,19 +1,32 @@
 <div class="jugadores-container">
   <h2>Lista de Jugadores</h2>
 
-  <div *ngIf="jugadores.length === 0"> <!-- Muestra mensaje si no hay jugadores -->
+  <div *ngIf="jugadores.length === 0">
     <p>No hay jugadores disponibles.</p>
   </div>
 
-  <ul *ngIf="jugadores.length > 0"> <!-- Lista de jugadores -->
-    <li *ngFor="let jugador of jugadores" class="jugador-item">
-      <div class="dorsal-background">{{ jugador.dorsal }}</div> <!-- Número del dorsal -->
-      <img [src]="jugador.foto" alt="{{jugador.nombre}}" class="jugador-foto" />
+
+  <div class="jugadores-list">
+    <div *ngFor="let jugador of jugadores" class="jugador-item">
+
+      <button class="boton" (click)="mostrarJugador(jugador)">
+        <p>{{ jugador.nombre }}</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de carta en pantalla completa -->
+  <div class="modal" *ngIf="jugadorSeleccionado" (click)="cerrarModal()">
+    <div class="jugador-card modal-card" (click)="$event.stopPropagation()">
+      <div class="dorsal-overlay">{{ jugadorSeleccionado.dorsal }}</div>
+      <img [src]="jugadorSeleccionado.foto" alt="{{jugadorSeleccionado.nombre}}" class="jugador-foto" />
       <div class="jugador-info">
-        <h3>{{ jugador.nombre }}</h3>
-        <p>Goles: {{ jugador.goles }}</p>
-        <p>Asistencias: {{ jugador.asistencias }}</p>
+        <h3 class="jugador-nombre">{{ jugadorSeleccionado.nombre }}</h3>
+        <div class="jugador-stats">
+          <p>Goles: {{ jugadorSeleccionado.goles }}</p>
+          <p>Asistencias: {{ jugadorSeleccionado.asistencias }}</p>
+        </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>

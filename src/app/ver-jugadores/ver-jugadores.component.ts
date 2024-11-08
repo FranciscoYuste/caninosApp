@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule
 export class VerJugadoresComponent implements OnInit {
 
   jugadores: Jugador[] = []; // Inicializa como un array vacío
+  jugadorSeleccionado: Jugador | null = null; // Propiedad para el jugador seleccionado
 
   constructor(private futbolService: FutbolService) {}
 
@@ -20,5 +21,12 @@ export class VerJugadoresComponent implements OnInit {
       this.jugadores = jugadores; // Asigna los jugadores a la propiedad
       console.log(jugadores);
     });
+  }
+  mostrarJugador(jugador: Jugador) {
+    this.jugadorSeleccionado = jugador; // Asigna el jugador seleccionado
+  }
+
+  cerrarModal() {
+    this.jugadorSeleccionado = null; // Restablece jugadorSeleccionado para cerrar el modal
   }
 }
