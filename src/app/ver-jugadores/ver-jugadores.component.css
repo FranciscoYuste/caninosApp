@@ -1,136 +1,97 @@
-.jugadores-container {
+/* Estilos del carrusel */
+.carousel {
+  max-width: 100%; /* Asegura que el carrusel ocupe todo el ancho del dispositivo */
+  margin: 0 auto; /* Centra el carrusel horizontalmente */
+}
+
+/* Estilos para las cartas de los jugadores */
+.jugador-card {
+  position: relative;
+  background: linear-gradient(135deg, #000000, #333333); /* Fondo oscuro degradado */
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 16px;
+  height: 100%; /* Ocupa toda la altura de la tarjeta */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.jugadores-list {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
-  gap: 20px; /* Espacio entre botones */
-  justify-content: center; /* Centra los elementos horizontalmente */
-}
-
-.jugador-card {
-  width: 250px;
-  height: 600px; /* Aumentar la altura de la carta */
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff23;
-}
-
+/* Dorsal dentro de la tarjeta, posicionado en la parte superior izquierda */
 .dorsal-overlay {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: linear-gradient(135deg, #fffb00, #000000); /* Degradado elegante */
-  color: rgb(0, 0, 0);
-  width: 70px; /* Aumentamos el tamaño */
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  color: white;
+  font-size: 60px;
   font-weight: bold;
-  border-radius: 50%;
-  font-size: 1.8em; /* Aumentamos el tamaño de la fuente */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
-  border: 3px solid rgb(0, 0, 0); /* Borde negro */
-  transition: all 0.3s ease; /* Suavizar la transición */
-  text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.7), 0 0 10px rgba(255, 255, 0, 0.7); /* Sombra amarilla */
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 10;
 }
 
+/* Imagen del jugador */
 .jugador-foto {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
 }
 
+/* Información del jugador */
 .jugador-info {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1; /* Hace que la sección de información crezca y ocupe el espacio disponible */
-  justify-content: space-between; /* Espacia los elementos (nombre, goles, asistencias) */
+  text-align: center;
+  margin-top: 10px;
 }
 
 .jugador-nombre {
-  margin: 5px 0;
-  font-size: 1.4em; /* Aumentar tamaño del nombre */
+  font-size: 18px;
   font-weight: bold;
-  color: rgb(224, 206, 40);
 }
 
 .jugador-stats {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  font-size: 1em; /* Ajuste del tamaño de la fuente */
-  color: #ffffff;
-}
-/* Modal de carta */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.5s ease;
+  margin-top: 10px;
 }
 
-.modal-card {
-  width: 90%;
-  max-width: 400px;
-  animation: slideUp 0.5s ease;
+.goles, .asistencias {
+  font-size: 14px;
+  color: #ddd;
 }
 
-.jugador-item {
-  flex: 1 1 30%; /* Hace que cada botón ocupe aproximadamente un 30% del ancho */
-  display: flex;
-  justify-content: center;
-  max-width: 200px; /* Limita el ancho máximo de cada botón */
+/* Estilos para los controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
-.boton {
-  width: 160px; /* Ancho fijo para todos los botones */
-  height: 50px; /* Alto fijo para todos los botones */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  font-size: 1em;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  background: linear-gradient(135deg, #fffb00, #000000); /* Degradado personalizado */
-  border: none;
-  border-radius: 30px; /* Bordes redondeados */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase; /* Texto en mayúsculas */
-  text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.7), 0 0 10px rgba(255, 255, 0, 0.7); /* Sombra amarilla */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #fff;
+  border-radius: 50%;
 }
 
-.boton:hover {
-  background: linear-gradient(135deg, #000000, #fffb00); /* Cambia el degradado en hover */
-  transform: translateY(-2px); /* Efecto de elevación */
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+/* Indicadores del carrusel */
+.carousel-indicators li {
+  background-color: #fff;
+  opacity: 0.7;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.carousel-indicators .active {
+  background-color: #fffb00;
+  opacity: 1;
 }
 
-@keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+/* Mejora de la interfaz de usuario en dispositivos móviles */
+@media (max-width: 768px) {
+  .jugador-card {
+    width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
+    margin: 0 auto; /* Centra la tarjeta */
+  }
 }

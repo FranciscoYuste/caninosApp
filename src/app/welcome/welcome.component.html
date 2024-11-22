@@ -1,16 +1,14 @@
-<div class="flex flex-col items-center justify-center h-screen bg-black bg-cover bg-center relative"
-  style="background-image: url('fondonegro.jpg');">
-  <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Fondo oscuro semitransparente -->
-  <img src="escudo.png" alt="Escudo del equipo" class="w-56 h-auto mb-10 relative z-10" />
-  <button (click)="onEnter()" class="relative py-4 px-8 text-white bg-yellow-500 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 z-10 text-xl">
-    Entrar
-    <span
-      class="absolute inset-0 bg-yellow-600 rounded-lg transition-all duration-300 transform scale-0 hover:scale-100"></span>
+<div class="video-container">
+  <video id="introVideo" autoplay muted>
+    <source src="introEdit.MP4" type="video/mp4" />
+    Tu navegador no soporta videos.
+  </video>
+  
+  <!-- Botones encima del video -->
+  <button (click)="onEnter()" class="overlay-button">
+    <span class="button-effect"></span>
   </button>
-  <button (click)="openAdminLogin()"
-    class="relative mt-4 py-3 px-5 text-white bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 text-lg z-10">
-    Admin
-    <span
-      class="absolute inset-0 bg-gray-700 rounded-lg transition-all duration-300 transform scale-0 hover:scale-100"></span>
+  <button (click)="openAdminLogin()" class="overlay-button">
+    <span class="button-effect"></span>
   </button>
 </div>

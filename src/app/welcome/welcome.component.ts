@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdminLoginComponent } from '../admin-login/admin-login.component';
@@ -9,15 +9,32 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css'], // Cambia a styleUrls
+  styleUrls: ['./welcome.component.css'],
 })
+export class WelcomeComponent implements OnInit {
+  // Estado inicial en "down"
+  animationState = 'down';
 
-export class WelcomeComponent {
+  constructor(
+    private router: Router,
+    private dialog: MatDialog,
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {}
 
-    // Estado inicial en "down"
-    animationState = 'down';
+  ngOnInit(): void {
+    // Busca el video utilizando ElementRef
+    const video = this.el.nativeElement.querySelector('#introVideo') as HTMLVideoElement;
 
-  constructor(private router: Router, private dialog: MatDialog) { }
+    if (video) {
+      // Escucha el evento `ended` del video
+      this.renderer.listen(video, 'ended', () => {
+        video.pause(); // Pausa el video
+        video.currentTime = video.duration; // Congela en la última imagen
+      });
+    }
+  }
+
   onEnter() {
     this.router.navigate(['/equipos']); // Navega a la ruta de Equipos
   }
@@ -25,9 +42,9 @@ export class WelcomeComponent {
   openAdminLogin() {
     const dialogRef = this.dialog.open(AdminLoginComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        // Aquí puedes redirigir al área de administración
+        // Redirige al área de administración
         this.router.navigate(['/validarLoginAdmin']); // Navega a la ruta de Administración
         console.log('Acceso concedido a la sección de admin');
       }

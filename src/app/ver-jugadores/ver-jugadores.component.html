@@ -1,32 +1,34 @@
-<div class="jugadores-container">
-  <h2>Lista de Jugadores</h2>
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+  <!-- Indicadores del carrusel -->
+  <ol class="carousel-indicators">
+    <li *ngFor="let jugador of jugadores; let i = index" [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
+  </ol>
 
-  <div *ngIf="jugadores.length === 0">
-    <p>No hay jugadores disponibles.</p>
-  </div>
-
-
-  <div class="jugadores-list">
-    <div *ngFor="let jugador of jugadores" class="jugador-item">
-
-      <button class="boton" (click)="mostrarJugador(jugador)">
-        <p>{{ jugador.nombre }}</p>
-      </button>
-    </div>
-  </div>
-
-  <!-- Modal de carta en pantalla completa -->
-  <div class="modal" *ngIf="jugadorSeleccionado" (click)="cerrarModal()">
-    <div class="jugador-card modal-card" (click)="$event.stopPropagation()">
-      <div class="dorsal-overlay">{{ jugadorSeleccionado.dorsal }}</div>
-      <img [src]="jugadorSeleccionado.foto" alt="{{jugadorSeleccionado.nombre}}" class="jugador-foto" />
-      <div class="jugador-info">
-        <h3 class="jugador-nombre">{{ jugadorSeleccionado.nombre }}</h3>
-        <div class="jugador-stats">
-          <p>Goles: {{ jugadorSeleccionado.goles }}</p>
-          <p>Asistencias: {{ jugadorSeleccionado.asistencias }}</p>
+  <!-- Contenedor de las cartas del carrusel -->
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let jugador of jugadores; let i = index" [class.active]="i === 0">
+      <div class="jugador-card">
+        <!-- Dorsal dentro de la tarjeta -->
+        <div class="dorsal-overlay">{{ jugador.dorsal }}</div>
+        <img [src]="jugador.foto" alt="{{ jugador.nombre }}" class="jugador-foto" />
+        <div class="jugador-info">
+          <h3 class="jugador-nombre">{{ jugador.nombre }}</h3>
+          <div class="jugador-stats">
+            <p class="goles">Goles: {{ jugador.goles }}</p>
+            <p class="asistencias">Asistencias: {{ jugador.asistencias }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Controles del carrusel -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
