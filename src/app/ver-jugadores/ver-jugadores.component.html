@@ -1,24 +1,18 @@
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
-  <!-- Indicadores del carrusel -->
-  <ol class="carousel-indicators">
-    <li *ngFor="let jugador of jugadores; let i = index" [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
-  </ol>
+<div *ngIf="jugadorSeleccionado">
 
-  <!-- Contenedor de las cartas del carrusel -->
-  <div class="carousel-inner">
-    <div class="carousel-item" *ngFor="let jugador of jugadores; let i = index" [class.active]="i === 0">
-      <div class="jugador-card">
-        <!-- Dorsal dentro de la tarjeta -->
-        <div class="dorsal-overlay">{{ jugador.dorsal }}</div>
-        <img [src]="jugador.foto" alt="{{ jugador.nombre }}" class="jugador-foto" />
-        <div class="jugador-info">
-          <h3 class="jugador-nombre">{{ jugador.nombre }}</h3>
-          <div class="jugador-stats">
-            <p class="goles">Goles: {{ jugador.goles }}</p>
-            <p class="asistencias">Asistencias: {{ jugador.asistencias }}</p>
-          </div>
-        </div>
-      </div>
+  <video [src]="jugadorSeleccionado.foto" class="video-fondo" autoplay muted playsinline></video>
+
+  <div class="navigation-container">
+    <button (click)="cambiarJugador('prev')" class="btn-izquierda">&#8249;</button>
+    <h3 class="nombre">{{ jugadorSeleccionado.nombre }}</h3>
+    <button (click)="cambiarJugador('next')" class="btn-derecha">&#8250;</button>
+  </div>
+
+  <div class="jugador-card">
+    <div class="tarjeta-overlay">
+      <div class="dorsal">{{ jugadorSeleccionado.dorsal }}</div>
+      <p class="goles">Goles: {{ jugadorSeleccionado.goles }}</p>
+      <p class="asistencias">Asistencias: {{ jugadorSeleccionado.asistencias }}</p>
     </div>
   </div>
 </div>

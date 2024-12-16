@@ -1,97 +1,65 @@
-/* Estilos del carrusel */
-.carousel {
-  max-width: 100%; /* Asegura que el carrusel ocupe todo el ancho del dispositivo */
-  margin: 0 auto; /* Centra el carrusel horizontalmente */
+/* Contenedor principal */
+.jugador-card {
+  position: relative; /* Necesario para que los elementos dentro usen posición relativa al contenedor */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 100%;
+  margin: auto; /* Centrado horizontal */
+  aspect-ratio: 16 / 9; /* Proporción para mantener la relación de aspecto */
 }
 
-/* Estilos para las cartas de los jugadores */
-.jugador-card {
-  position: relative;
-  background: linear-gradient(135deg, #000000, #333333); /* Fondo oscuro degradado */
-  border-radius: 16px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  color: #ffffff;
+/* Video de fondo */
+.video-fondo {
+  width: 100%; /* Escala al ancho del contenedor */
+  height: 100%; /* Escala al alto del contenedor */
+  object-fit: cover; /* Asegura que el video cubra completamente el contenedor sin distorsión */
+  position: absolute; 
+  left: 0;
+  z-index: -1; /* Video detrás del contenido */
+}
+
+/* Contenido superpuesto en la tarjeta */
+.tarjeta-overlay {
+  margin-top: 275px; /* Ajusta la posición respecto al fondo */
+  text-align: center;
+  color: #fff; /* Texto blanco */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 16px;
-  height: 100%; /* Ocupa toda la altura de la tarjeta */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Tamaño de fuente responsivo */
 }
 
-/* Dorsal dentro de la tarjeta, posicionado en la parte superior izquierda */
-.dorsal-overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
-  color: white;
-  font-size: 60px;
+.dorsal {
+  font-size: 2rem;
   font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  z-index: 10;
+  color: rgb(240, 229, 82);
+  text-shadow: 3px 3px 0px black; /* Sombra negra dura de 1 píxel */
 }
 
-/* Imagen del jugador */
-.jugador-foto {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover; /* Mantiene la proporción de la imagen */
+.goles,.asistencias{
+  color: rgb(0, 0, 0);
 }
 
-/* Información del jugador */
-.jugador-info {
+/* Contenedor de navegación */
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nombre {
+  flex: 1;
   text-align: center;
-  margin-top: 10px;
+  font-size: clamp(2rem, 3vw, 2rem);
+  color: rgb(240, 229, 82);
 }
 
-.jugador-nombre {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.jugador-stats {
-  margin-top: 10px;
-}
-
-.goles, .asistencias {
-  font-size: 14px;
-  color: #ddd;
-}
-
-/* Estilos para los controles del carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #fff;
-  border-radius: 50%;
-}
-
-/* Indicadores del carrusel */
-.carousel-indicators li {
-  background-color: #fff;
-  opacity: 0.7;
-}
-
-.carousel-indicators .active {
-  background-color: #fffb00;
-  opacity: 1;
-}
-
-/* Mejora de la interfaz de usuario en dispositivos móviles */
-@media (max-width: 768px) {
-  .jugador-card {
-    width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
-    margin: 0 auto; /* Centra la tarjeta */
-  }
+.btn-izquierda,
+.btn-derecha {
+  background-color: transparent;
+  border: none;
+  font-size: 5rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
