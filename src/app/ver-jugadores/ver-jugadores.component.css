@@ -19,7 +19,7 @@
 
 /* Contenido superpuesto en la tarjeta */
 .tarjeta-overlay {
-  margin-top: 275px; /* Ajusta la posición respecto al fondo */
+  margin-top: 195px;
   text-align: center;
   color: #fff; /* Texto blanco */
   display: flex;
@@ -35,8 +35,13 @@
   text-shadow: 3px 3px 0px black; /* Sombra negra dura de 1 píxel */
 }
 
-.goles,.asistencias{
-  color: rgb(0, 0, 0);
+.goles{
+  margin-top: 20px;
+  color: rgb(240, 229, 82);
+}
+
+.asistencias{
+  color: rgb(240, 229, 82);
 }
 
 /* Contenedor de navegación */
