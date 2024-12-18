@@ -44,6 +44,7 @@ h3 {
   border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
   color: #fff; /* Texto blanco */
+  gap: 5px; /* Espacio entre los elementos */
 }
 
 .partido-detalle:hover {
