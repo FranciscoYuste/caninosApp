@@ -1,98 +1,150 @@
+/* Contenedor de la clasificación */
 .clasificacion-container {
-  max-width: 800px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding: 16px; /* Espaciado interno */
-  text-align: center; /* Centra el texto en el contenedor */
-  display: flex; /* Activa flexbox */
-  flex-direction: column; /* Coloca los elementos en una columna */
-  align-items: center; /* Centra los elementos horizontalmente */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  background-position: center; /* Centra la imagen */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
 }
 
+/* Tabla de clasificación */
 .clasificacion-table {
-  width: 100%; /* La tabla ocupa el 100% del ancho del contenedor */
-  border-collapse: collapse; /* Colapsa los bordes de la tabla */
-  font-size: 0.9em; /* Tamaño de letra reducido para toda la tabla */
-  color: white; /* Color del texto */
-  overflow-x: auto; /* Permite el desplazamiento horizontal en pantallas pequeñas */
+  width: 100%;
+  font-size: 0.9em;
+  color: white;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  box-sizing: border-box; /* Ajuste del tamaño total */
 }
 
+/* Encabezados de la tabla */
 .clasificacion-table th {
-  background-color: rgba(255, 255, 255, 0.185); /* Fondo blanco para los encabezados */
-  color: rgb(153, 153, 153); /* Texto negro para los encabezados */
-  font-weight: bold; /* Negrita para encabezados */
-  padding: 10px; /* Espaciado interno */
-  border: 2px solid #585858; /* Borde para encabezados */
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2); /* Sombra para los encabezados */
+  background-color: rgba(255, 255, 255, 0.185);
+  color: rgb(153, 153, 153);
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid #585858;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Celdas de la tabla */
 .clasificacion-table td {
-  padding: 10px; /* Espaciado interno para celdas */
-  border: 1px solid #585858; /* Borde para celdas */
-  font-size: 0.9em; /* Tamaño de letra normal para celdas */
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.24); /* Sombra exterior */
-  transition: transform 0.2s ease; /* Transición para el efecto de escala */
+  padding: 10px;
+  border: 1px solid #585858;
+  font-size: 0.9em;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.24);
+  transition: transform 0.2s ease;
 }
 
+/* Efecto de hover para filas */
 .clasificacion-table tbody tr:hover td,
 .clasificacion-table tbody tr:hover th {
-  transform: translateY(-2px); /* Efecto de levantamiento al pasar el mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.377); /* Aumentar la sombra al pasar el mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.377);
 }
 
+/* Fondo alternado en filas */
 .clasificacion-table tbody tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.055); /* Fondo blanco semitransparente para filas pares */
+  background-color: rgba(0, 0, 0, 0.055);
 }
 
+/* Fondo al pasar el mouse sobre una fila */
 .clasificacion-table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.247); /* Color de fondo al pasar el mouse */
+  background-color: rgba(0, 0, 0, 0.247);
 }
 
-/* Estilos para móviles */
-@media (max-width: 600px) {
-  .clasificacion-table {
-    font-size: 0.8em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
-    width: auto; /* Permitir que la tabla se ajuste al contenido */
+/* Estilos para el botón */
+button {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 16px;
+}
+
+button:hover {
+  background-color: #FFC107;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #FFA000;
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Título */
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Media Queries para Pantallas Pequeñas */
+@media (max-width: 768px) {
+  .clasificacion-container {
+    max-width: 100%;
+    padding: 10px; /* Menos padding */
   }
 
   .clasificacion-table th,
   .clasificacion-table td {
-    padding: 8px; /* Menos espaciado en celdas */
+    padding: 8px; /* Menos padding */
+  }
+
+  /* Reducción de tamaño de fuente en dispositivos más pequeños */
+  .clasificacion-table {
+    font-size: 0.8em;
+  }
+
+  button {
+    font-size: 14px; /* Tamaño de texto más pequeño para el botón */
+    padding: 8px 16px; /* Menos padding en el botón */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Título más pequeño */
+    padding: 8px; /* Menos padding en el título */
   }
 }
 
-button {
-  background-color: #FFD700; /* Color de fondo amarillo */
-  color: black; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno (vertical y horizontal) */
-  font-size: 16px; /* Tamaño de la fuente */
-  cursor: pointer; /* Cambia el cursor a un puntero */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave para el cambio de color y escala */
-  margin-top: 16px; /* Espaciado superior para el botón */
-}
+/* Media Queries para dispositivos móviles */
+@media (max-width: 480px) {
+  .clasificacion-container {
+    padding: 8px; /* Aún menos padding en dispositivos pequeños */
+  }
 
-button:hover {
-  background-color: #FFC107; /* Color de fondo más oscuro al pasar el mouse */
-  transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
-}
+  .clasificacion-table {
+    font-size: 0.75em; /* Tamaño de fuente aún más pequeño */
+  }
 
-button:active {
-  background-color: #FFA000; /* Color de fondo aún más oscuro al hacer clic */
-  transform: scale(0.95); /* Efecto de escala al hacer clic */
-}
+  .clasificacion-table th,
+  .clasificacion-table td {
+    padding: 6px; /* Reducción aún más en el padding */
+  }
 
-button:focus {
-  outline: none; /* Elimina el contorno al enfocarse */
-}
+  button {
+    font-size: 12px; /* Botón más pequeño */
+    padding: 6px 12px; /* Menos padding */
+  }
 
-h2 {
-  margin-top: 10px; /* Espaciado superior */
-  margin-bottom: 10px;
-  padding: 10px; /* Espaciado interno */
-  border-radius: 4px; /* Bordes redondeados */
-  color: #ffffff; /* Color del texto */
-  text-align: center; /* Centra el texto en el contenedor */
+  h2 {
+    font-size: 1.1em; /* Título más pequeño en dispositivos móviles */
+  }
 }

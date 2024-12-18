@@ -11,7 +11,7 @@ import { WelcomeComponent } from "../welcome/welcome.component";
   standalone: true,
   templateUrl: './ver-equipos.component.html',
   styleUrls: ['./ver-equipos.component.css'],
-  imports: [CommonModule, VerPartidosComponent, WelcomeComponent]
+  imports: [CommonModule, VerPartidosComponent]
 })
 
 export class VerEquiposComponent implements OnInit {

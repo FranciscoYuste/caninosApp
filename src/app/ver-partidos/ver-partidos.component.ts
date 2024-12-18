@@ -8,48 +8,46 @@ import Partido from '../../interfaz/partido';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './ver-partidos.component.html',
-  styleUrls: ['./ver-partidos.component.css'] // Corrige 'styleUrl' a 'styleUrls'
+  styleUrls: ['./ver-partidos.component.css']
 })
 export class VerPartidosComponent implements OnInit {
+  partidos: Partido[] = []; // Lista de todos los partidos
+  partidosPorJornada: { [jornada: string]: Partido[] } = {}; // Partidos agrupados por jornada
+  partidosCaninosPorJornada: { [jornada: string]: Partido[] } = {}; // Partidos caninos agrupados por jornada
+  jornadaAbierta: string | null = null; // Controla qué jornada está abierta
 
-  partidos: Partido[] = []; // Inicializa como un array vacío
-  partidosPorJornada: { [jornada: string]: Partido[] } = {}; // Para agrupar partidos por jornada
-  partidosCaninos: Partido[] = []; // Array para los partidos caninos
-  jornadaAbierta: string | null = null; // Variable para controlar la jornada abierta
-
-  constructor(private futbolService: FutbolService) { }
+  constructor(private futbolService: FutbolService) {}
 
   ngOnInit(): void {
     this.futbolService.getPartidos().subscribe((partidos) => {
       this.partidos = partidos.map(partido => ({ ...partido }));
 
-      // Agrupar los partidos por jornada y separar los caninos
+      // Organizar los partidos por jornadas
       this.partidos.forEach(partido => {
-        if (partido.esCanino) {
-          this.partidosCaninos.push(partido);
-        }
-
+        // Partidos generales
         if (!this.partidosPorJornada[partido.jornada]) {
           this.partidosPorJornada[partido.jornada] = [];
         }
         this.partidosPorJornada[partido.jornada].push(partido);
-      });
 
-      console.log(this.partidosPorJornada);
+        // Partidos Caninos
+        if (partido.esCanino) {
+          if (!this.partidosCaninosPorJornada[partido.jornada]) {
+            this.partidosCaninosPorJornada[partido.jornada] = [];
+          }
+          this.partidosCaninosPorJornada[partido.jornada].push(partido);
+        }
+      });
     });
   }
 
-  toggleJornada(jornada: string) {
-    this.jornadaAbierta = this.jornadaAbierta === jornada ? null : jornada; // Alternar la jornada abierta
+  // Método para alternar la jornada abierta
+  toggleJornada(jornada: string): void {
+    this.jornadaAbierta = this.jornadaAbierta === jornada ? null : jornada;
   }
 
   // Método para alternar la visibilidad de los detalles
-  toggleDetalles(partido: Partido & { mostrarDetalles?: boolean }) {
-    partido.mostrarDetalles = !partido.mostrarDetalles; // Cambiar el estado de mostrarDetalles
-  }
-
-  // Método para alternar la visibilidad de los detalles
-  toggleDetalles2(partido: Partido & { mostrarDetalles?: boolean }) {
-    partido.mostrarDetalles = !partido.mostrarDetalles; // Cambiar el estado de mostrarDetalles
+  toggleDetalles(partido: Partido): void {
+    partido.mostrarDetalles = !partido.mostrarDetalles;
   }
 }
